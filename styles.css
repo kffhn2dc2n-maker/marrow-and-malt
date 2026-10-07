@@ -1,0 +1,40 @@
+/* Marrow & Malt: styles that complement Tailwind utilities */
+
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+/* Buttons: shared across page and drawer */
+.btn-primary {
+  display: inline-block; text-align: center; cursor: pointer;
+  background: #e3a72f; color: #111; font-weight: 700;
+  padding: .85rem 1.6rem; border-radius: .4rem;
+  transition: background .2s, transform .2s;
+}
+.btn-primary:hover { background: #f0b94a; transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-block; text-align: center; cursor: pointer;
+  border: 1px solid #6b4a37; color: #f1e7d8; font-weight: 500;
+  padding: .85rem 1.6rem; border-radius: .4rem;
+  transition: border-color .2s, color .2s;
+}
+.btn-ghost:hover { border-color: #e3a72f; color: #e3a72f; }
+
+/* Visible keyboard focus */
+:focus-visible { outline: 2px solid #3fc4a8; outline-offset: 3px; }
+
+/* Single deliberate motion moment: the hero can drifts gently */
+.float-slow { animation: drift 7s ease-in-out infinite; }
+@keyframes drift { 50% { transform: translateY(-12px) rotate(1.5deg); } }
+
+/* Science tabs */
+.tab-btn { padding: .5rem 1rem; border: 1px solid #4a2f22; border-radius: 999px; font-size: .9rem; cursor: pointer; transition: all .2s; }
+.tab-btn[aria-selected="true"] { background: #3fc4a8; border-color: #3fc4a8; color: #111; font-weight: 700; }
+
+/* Nutrient bars on the label */
+.dv-bar { height: .5rem; background: #d9ccb8; border-radius: 999px; overflow: hidden; }
+.dv-fill { height: 100%; background: #111; transition: width .5s ease; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
